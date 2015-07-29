@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <title>simple chat!</title>
   <script src="http://cdn.mlkcca.com/v2.0.0/milkcocoa.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
   <script src="main.js"></script>
 </head>
 <body>
-  <textarea name="" id="msg" cols="30" rows="4"></textarea>
-  <button name="button" onClick="clickEvent()">send message!</button>
-  <ul id="board"></ul>
+  <input type="text" id="msg" onkeydown="if (event.keyCode == 13) clickEvent()">
+  <pre>
+  <ul id="board">
+    
+  </ul>
+  </pre>
 </body>
 </html>

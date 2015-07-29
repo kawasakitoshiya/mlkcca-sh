@@ -8,21 +8,28 @@ window.onload = function(){
 
 function clickEvent(){
     var text = textArea.value;
+    if(text=="clear"){
+	board.innerHTML = "";
+	addText(">");
+	return;
+    }
     sendText(text);
 }
 
 function sendText(text){
     chatDataStore.push({message : text, type:"request"});
-    console.log("送信完了!");
     textArea.value = "";
+    addText(">" + text);
 }
 
 chatDataStore.on("push",function(data){
-    addText(data.value.message);
+	if(data.value.type=="request") return;
+	addText(data.value.message);
+	addText(">");
 });
 
 function addText(text){
     var msgDom = document.createElement("li");
     msgDom.innerHTML = text;
-    board.insertBefore(msgDom, board.firstChild);
+    board.appendChild(msgDom);
 }
