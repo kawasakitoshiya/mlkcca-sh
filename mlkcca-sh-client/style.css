@@ -1,11 +1,14 @@
 body {
     color: #00FF00;
-    background-color: black
+    background-color: black;
 }
 
 input  {
     color: #00FF00;
-    background-color: black
+    background-color: black;
+    outline: 0;
+    border-color: black;
+    width: 80%;
 }
 
 li {
